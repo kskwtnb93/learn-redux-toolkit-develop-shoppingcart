@@ -4,14 +4,14 @@ import { CartItem } from './CartItem'
 
 export const CartContainer = () => {
   const dispatch = useDispatch()
-  const { items, totalCount, totalPrice } = useSelector((state) => state.cart)
+  const { items, totalPrice } = useSelector((state) => state.cart)
 
   return (
     <section>
       <header className="cart">
         <h2>買い物かご</h2>
 
-        {totalCount === 0 ? (
+        {items.length === 0 ? (
           <p className="empty-cart">何も入ってません</p>
         ) : (
           <>
