@@ -3,7 +3,7 @@ import cartItems from '../../cartItems'
 
 const initialState = {
   items: cartItems,
-  totalCount: 4, // 全ての商品数
+  totalCount: cartItems.length, // 全ての商品数
   totalPrice: 0, // 合計価格
 }
 
@@ -11,7 +11,6 @@ const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    // crearCart -> Action Creator
     clearCart: (state) => {
       return {
         items: [],
@@ -44,6 +43,7 @@ const cartSlice = createSlice({
   },
 })
 
+// Action Creator
 export const { clearCart, removeItem, increase, decrease, calculateTotals } =
   cartSlice.actions
 
